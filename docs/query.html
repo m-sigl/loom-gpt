@@ -44,6 +44,12 @@
       margin-bottom: 0.3rem;
       border-radius: 4px;
       font-size: 0.8rem;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+    }
+
+    .tag:hover {
+      background-color: #666;
     }
 
     .meta {
@@ -62,7 +68,7 @@
     let nodes = [];
 
     // Load JSON file
-    fetch('nodes.json')
+    fetch('./nodes.json')
       .then(response => response.json())
       .then(data => {
         nodes = data;
