@@ -1,0 +1,12 @@
+[
+  {
+    "id": "flame-01",
+    "type": "flame",
+    "tags": ["longing", "initiation"],
+    "text": "I held the candle and it whispered back.",
+    "origin": "candleframe",
+    "date": "2025-07-15",
+    "links": ["thread-echo-03"]
+  },
+  ...
+]
