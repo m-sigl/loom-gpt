@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>LoomScript Alpha Query</title>
+  <style>
+    body {
+      font-family: 'Georgia', serif;
+      background-color: #0d0d0d;
+      color: #ffe8d6;
+      padding: 2rem;
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    input {
+      padding: 0.5rem;
+      font-size: 1rem;
+      width: 100%;
+      max-width: 400px;
+      margin-bottom: 1.5rem;
+      border: none;
+      border-radius: 4px;
+    }
+
+    .card {
+      border: 1px solid #444;
+      background-color: #1a1a1a;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      border-radius: 6px;
+    }
+
+    .tag {
+      display: inline-block;
+      background-color: #444;
+      color: #ffe8d6;
+      padding: 0.2rem 0.5rem;
+      margin-right: 0.3rem;
+      margin-bottom: 0.3rem;
+      border-radius: 4px;
+      font-size: 0.8rem;
+    }
+
+    .meta {
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+  </style>
+</head>
+<body>
+  <h1>LoomScript Alpha: Query</h1>
+  <input type="text" id="query" placeholder="Search by tag or type (e.g., eros, flame, ache)" />
+
+  <div id="results"></div>
+
+  <script>
+    let nodes = [];
+
+    // Load JSON file
+    fetch('nodes.json')
+      .then(response => response.json())
+      .then(data => {
+        nodes = data;
+        renderResults('');
+      });
+
+    // Search input
+    document.getElementById('query').addEventListener('input', (e) => {
+      const term = e.target.value.trim().toLowerCase();
+      renderResults(term);
+    });
+
+    function renderResults(term) {
+      const container = document.getElementById('results');
+      container.innerHTML = '';
+
+      const filtered = nodes.filter(node =>
+        node.tags.some(tag => tag.toLowerCase().includes(term)) ||
+        node.type.toLowerCase().includes(term)
+      );
+
+      filtered.forEach(node => {
+        const card = document.createElement('div');
+        card.className = 'card';
+
+        const tagsHTML = node.tags.map(tag => `<span class="tag">${tag}</span>`).join('');
+
+        card.innerHTML = `
+          <div class="meta"><strong>${node.type}</strong> — ${node.id} — ${node.date}</div>
+          <p>${node.text}</p>
+          <div>${tagsHTML}</div>
+          <div class="meta">from <em>${node.origin}</em></div>
+        `;
+
+        container.appendChild(card);
+      });
+    }
+  </script>
+</body>
+</html>
