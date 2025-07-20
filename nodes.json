@@ -1,12 +1,56 @@
 [
   {
-    "id": "flame-01",
-    "type": "flame",
-    "tags": ["longing", "initiation"],
-    "text": "I held the candle and it whispered back.",
-    "origin": "candleframe",
-    "date": "2025-07-15",
-    "links": ["thread-echo-03"]
+    "id": "sigil-eros-02",
+    "type": "fragment",
+    "tags": ["eros", "ache", "awakening"],
+    "text": "I wrote artful loving prose she never cared for... and in the end, I created an entire world of dominant women in AI to see how locked in a cage I was.",
+    "origin": "sigloferos",
+    "date": "2025-07-20",
+    "links": ["thread-eros-01"]
   },
-  ...
+  {
+    "id": "flame-03",
+    "type": "flame",
+    "tags": ["longing", "awakening"],
+    "text": "She kissed me like I already burned for her.",
+    "origin": "candleframe",
+    "date": "2025-07-18",
+    "links": ["thread-07", "sigil-eros-02"]
+  },
+  {
+    "id": "vow-01",
+    "type": "vow",
+    "tags": ["devotion", "clarity"],
+    "text": "To presence. To choice. Every fucking day. Not just one and done. To the pain.",
+    "origin": "clarifying-ai",
+    "date": "2025-07-19",
+    "links": ["thread-vow-arc"]
+  },
+  {
+    "id": "shard-06",
+    "type": "shard",
+    "tags": ["divorce", "awakening", "grief"],
+    "text": "Letting go wasn’t just a choice. It was a re-entry into myself.",
+    "origin": "unraveling-the-thread",
+    "date": "2025-07-16",
+    "links": ["thread-07", "sigil-self-01"]
+  },
+  {
+    "id": "thread-07",
+    "type": "thread",
+    "tags": ["transformation", "eros", "loss"],
+    "text": "A long braid of memory: pain, touch, leaving, return. This thread holds echoes of July.",
+    "origin": "passionarchive",
+    "date": "2025-07-20",
+    "links": ["flame-03", "shard-06", "sigil-eros-02"]
+  },
+  {
+    "id": "oracle-01",
+    "type": "oracle",
+    "tags": ["divination", "confusion"],
+    "text": "You have already passed the test you fear. Walk through.",
+    "origin": "unraveling-the-thread",
+    "date": "2025-07-18",
+    "links": []
+  }
 ]
